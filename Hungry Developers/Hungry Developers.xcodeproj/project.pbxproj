@@ -15,7 +15,6 @@
 		5D7C042A23727DBD00AA4916 /* HungryDevsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7C042923727DBD00AA4916 /* HungryDevsViewController.swift */; };
 		5D7C042D23727F2500AA4916 /* Developer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7C042C23727F2500AA4916 /* Developer.swift */; };
 		5D7C042F23727F3000AA4916 /* Spoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7C042E23727F3000AA4916 /* Spoon.swift */; };
-		5D7C043223727F5400AA4916 /* MealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7C043123727F5400AA4916 /* MealController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		5D7C042923727DBD00AA4916 /* HungryDevsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HungryDevsViewController.swift; sourceTree = "<group>"; };
 		5D7C042C23727F2500AA4916 /* Developer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Developer.swift; sourceTree = "<group>"; };
 		5D7C042E23727F3000AA4916 /* Spoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoon.swift; sourceTree = "<group>"; };
-		5D7C043123727F5400AA4916 /* MealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +60,14 @@
 		5D7C0414237278CD00AA4916 /* Hungry Developers */ = {
 			isa = PBXGroup;
 			children = (
-				5D7C043023727F3C00AA4916 /* Controller */,
 				5D7C042B23727F1300AA4916 /* Model */,
 				5D7C0415237278CD00AA4916 /* AppDelegate.swift */,
-				5D7C0417237278CD00AA4916 /* SceneDelegate.swift */,
+				5D7C042923727DBD00AA4916 /* HungryDevsViewController.swift */,
 				5D7C041B237278CD00AA4916 /* Main.storyboard */,
 				5D7C041E237278D000AA4916 /* Assets.xcassets */,
 				5D7C0420237278D000AA4916 /* LaunchScreen.storyboard */,
+				5D7C0417237278CD00AA4916 /* SceneDelegate.swift */,
 				5D7C0423237278D000AA4916 /* Info.plist */,
-				5D7C042923727DBD00AA4916 /* HungryDevsViewController.swift */,
 			);
 			path = "Hungry Developers";
 			sourceTree = "<group>";
@@ -82,14 +79,6 @@
 				5D7C042E23727F3000AA4916 /* Spoon.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		5D7C043023727F3C00AA4916 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5D7C043123727F5400AA4916 /* MealController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,7 +154,6 @@
 			files = (
 				5D7C042F23727F3000AA4916 /* Spoon.swift in Sources */,
 				5D7C042D23727F2500AA4916 /* Developer.swift in Sources */,
-				5D7C043223727F5400AA4916 /* MealController.swift in Sources */,
 				5D7C0416237278CD00AA4916 /* AppDelegate.swift in Sources */,
 				5D7C0418237278CD00AA4916 /* SceneDelegate.swift in Sources */,
 				5D7C042A23727DBD00AA4916 /* HungryDevsViewController.swift in Sources */,
