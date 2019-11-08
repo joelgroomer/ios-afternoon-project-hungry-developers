@@ -9,15 +9,12 @@
 import Foundation
 import UIKit
 
-enum SpoonState {
-    case held
-    case notHeld
-}
 
 class Spoon {
     let spoonNumber: Int
     let spoonLabel: UILabel
-    var state = SpoonState.notHeld
+    var heldBy: Int = 0
+    let lock = NSLock()
     
     init(spoonNumber: Int, spoonLabel: UILabel) {
         self.spoonNumber = spoonNumber
@@ -25,20 +22,28 @@ class Spoon {
     }
     
     func pickUp(by: Int) -> Bool {
-        if state == .notHeld {
-            state = .held
-            DispatchQueue.main.async {
-                self.spoonLabel.text = " \(by) "
-            }
-            return true
+//        if state == .notHeld {
+//            state = .held
+//            DispatchQueue.main.async {
+//                self.spoonLabel.text = " \(by) "
+//            }
+//            return true
+//        }
+//        return false
+        lock.lock()
+        heldBy = by
+        DispatchQueue.main.async {
+            self.spoonLabel.text = " \(by) "
         }
-        return false
+        return true
     }
     
     func putDown() {
         DispatchQueue.main.async {
             self.spoonLabel.text = "🥄"
         }
-        state = .notHeld
+        heldBy = 0
+        lock.unlock()
+//        state = .notHeld
     }
 }

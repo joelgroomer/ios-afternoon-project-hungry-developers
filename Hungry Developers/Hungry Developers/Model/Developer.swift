@@ -64,6 +64,7 @@ class Developer {
     }
     
     func run() {
+        print("Dev \(devNumber) is starting.")
         updateOutput("Dev \(devNumber) is starting.")
         running = true
         while running {

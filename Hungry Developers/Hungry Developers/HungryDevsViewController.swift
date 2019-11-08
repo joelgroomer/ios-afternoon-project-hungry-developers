@@ -21,6 +21,7 @@ class HungryDevsViewController: UIViewController {
     @IBOutlet weak var lblDev5: UILabel!
     @IBOutlet weak var lblSpoon5: UILabel!
     @IBOutlet weak var txtvOutput: UITextView!
+    var developers: [Developer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +36,16 @@ class HungryDevsViewController: UIViewController {
         let dev3 = Developer(devNumber: 3, leftSpoon: spoon3, rightSpoon: spoon2, devLabel: lblDev3, delegate: self)
         let dev4 = Developer(devNumber: 4, leftSpoon: spoon4, rightSpoon: spoon3, devLabel: lblDev4, delegate: self)
         let dev5 = Developer(devNumber: 5, leftSpoon: spoon5, rightSpoon: spoon4, devLabel: lblDev5, delegate: self)
-        let developers = [dev1, dev2, dev3, dev4, dev5]
-        
-        DispatchQueue.concurrentPerform(iterations: 5) {
-            developers[$0].run()
-        }
+        developers = [dev1, dev2, dev3, dev4, dev5]
     }
 
+    
+    @IBAction func startTapped(_ sender: Any) {
+        txtvOutput.text = "Starting...\n"
+        DispatchQueue.concurrentPerform(iterations: 6) {
+            print($0)
+            self.developers[$0].run()
+        }
+    }
+    
 }
