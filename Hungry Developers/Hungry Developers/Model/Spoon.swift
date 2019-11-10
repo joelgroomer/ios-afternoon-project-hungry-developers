@@ -7,14 +7,21 @@
 //
 
 import Foundation
+import UIKit
+
+protocol SpoonDelegate: UIViewController {
+    func updateLabel(for dev: Int)
+}
 
 class Spoon {
     let spoonID: Int
-    var heldBy: Int = 0
+    var heldBy: Int { didSet { updateLabel() } }
     let lock = NSLock()
+    var delegate: SpoonDelegate?
     
-    init(id: Int) {
+    init(id: Int, delegate: SpoonDelegate? = nil) {
         self.spoonID = id
+        self.heldBy = 0
     }
     
     func pickUp(by dev: Int) {
@@ -27,5 +34,14 @@ class Spoon {
         heldBy = 0
         print("spoon \(spoonID) put down.")
         lock.unlock()
+    }
+    
+    func updateLabel() {
+        print("hi")
+        DispatchQueue.main.async {
+            print("hi again")
+            guard let delegate = self.delegate else { return }
+            delegate.updateLabel(for: self.heldBy)
+        }
     }
 }

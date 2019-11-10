@@ -27,7 +27,7 @@ class Developer {
     
     func eat() {
         print("Dev \(devID) eating.")
-        sleep(1)
+        usleep(useconds_t(Int.random(in: 1...1000)))
         leftSpoon.putDown()
         rightSpoon.putDown()
     }
